@@ -21,4 +21,5 @@ from App import views as App_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', App_views.index),
+    url(r'^play/', App_views.playGround),
 ]
