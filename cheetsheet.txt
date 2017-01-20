@@ -1,0 +1,27 @@
+1, kill process:
+netstat -a -o -n
+taskkill /F /PID 28344
+
+2,after config mongo.cfg, start and stop mongodb
+ win key , type cmd.exe, shift+ctrl+enter
+net start MongoDB
+net stop MongoDB
+
+3, run nginx
+cd C:\Program Files\nginx-1.11.8
+nginx start
+nginx -s stop	fast shutdown
+nginx -s quit	graceful shutdown
+nginx -s reload	changing configuration, starting new worker processes with a new configuration, graceful shutdown of old worker processes
+nginx -s reopen	re-opening log files
+
+4, install supervisor, ?????????????,??????? gunicorn/uwsgi ( just for python2, not python3)
+pip install supervisor
+
+5, install uwsgi (doesn't support windows, only linux)
+pip install uwsgi 
+
+6, install cygwin ( this shit may have some uses)
+
+7, install flup ( like uwsgi or gunicorn) ( python3 needs flup6)
+pip install flup6
