@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 from App import views as App_views
 
@@ -22,4 +24,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', App_views.index),
     url(r'^play/', App_views.playGround),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
